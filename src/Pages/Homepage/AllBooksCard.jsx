@@ -1,9 +1,11 @@
 import React from 'react';
 import { IoIosStarOutline } from "react-icons/io";
+import { Link } from 'react-router';
 
 const AllBooksCard = ({ book }) => {
+    
     return (
-        <div>
+        <Link to={`/booksDetails/${book.bookId}`}>
             <div className="card bg-base-100 shadow-sm">
                 <figure className='bg-base-200'>
                     <div className='p-10 flex justify-center items-center'>
@@ -39,7 +41,7 @@ const AllBooksCard = ({ book }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
