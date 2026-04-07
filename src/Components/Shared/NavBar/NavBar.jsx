@@ -19,11 +19,11 @@ const NavBar = () => {
     </>
     return (
         <div>
-            <div className="navbar mt-5 mb-12">
-                <div className="navbar-start">
+            <div className="flex justify-between items-center mt-5 mb-12">
+                <div className=" ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <FiMenu className='text-xl' />
+                            <FiMenu className='text-sm sm:text-lg md:text-xl' />
                         </div>
                         <ul
                             tabIndex="-1"
@@ -33,16 +33,16 @@ const NavBar = () => {
                     </div>
                     <NavLink
                         to={'/'}
-                        className=" md:text-xl lg:text-2xl font-bold text-[#131313]">
+                        className="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-[#131313]">
                         Book Vibes
                     </NavLink>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className=" hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-8 text-[#131313]">
                         {link}
                     </ul>
                 </div>
-                <div className="navbar-end gap-1 lg:gap-4">
+                <div className="flex flex-wrap sm:flex-row gap-2 md:gap-4 sm:gap-3 ">
                     <a className="btn btn-xs sm:btn-sm md:btn-md">Sign In</a>
                     <a className="btn btn-xs sm:btn-sm md:btn-md">Sign Up</a>
                 </div>
