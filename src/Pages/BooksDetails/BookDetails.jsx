@@ -7,7 +7,6 @@ const BookDetails = () => {
 
     const expectBook = books.find(book => book.bookId === Number(id))
     const {
-        bookId,
         bookName,
         author,
         image,
@@ -20,36 +19,52 @@ const BookDetails = () => {
         yearOfPublishing
     } = expectBook;
     return (
-        <div>
-            <div className="card lg:card-side bg-base-100 shadow-sm">
-                <figure className='p-10 '>
-                    <img
-                        className='max-h-full w-full'
-                        src={image}
-                        alt={bookName} />
-                </figure>
-                <div className="card-body">
-                    <div className='mb-4'>
-                        <h2 className="playfair font-medium md:font-bold text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl text-[#131313]">
-                            {bookName}
-                        </h2>
-                    </div>
-                    <div className='mb-6'>
-                        <p className='font-medium text-xl text-[#13131380] '>By : {author}</p>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
+            <figure className='flex justify-center items-center p-20 bg-[#13131310] rounded-lg'>
+                <img className='lg:h-[500px]'
+                    src={image}
+                    alt={bookName} />
+            </figure>
+            <div>
+                <div className='space-y-4 mb-6'>
+                    <h1 className='playfair font-bold text-4xl text-[#131313] '>{bookName}</h1>
+                    <p className='font-medium text-xl text-[#13131380] '>By: {author}</p>
+                </div>
+                <div className='border-t border-[#13131315] mb-4 '></div>
+                <div className='font-medium text-xl text-[#13131380] mb-4'>
+                    <p>{category}</p>
+                </div>
+                <div className='border-t border-[#13131315] mb-6 '></div>
+                <div className='mb-6 leading-7 '>
+                    <p className='font-bold text-[#131313]'>Review: <span className='font-normal text-[#13131370]'>{review}</span></p>
+                </div>
+                <div className='flex gap-4 mb-6 items-center'>
+                    <p className='font-bold text-[#131313]'>Tag</p>
+                    <div className='flex gap-5'>
+                        {tags.map((tag, index) =>
+                            <p
+                                className='py-2 px-4 rounded-full bg-[#13131310] text-[#23BE0A] font-medium badge-xs sm:badge-sm md:badge-md lg:badge-lg' key={index}>
+                                {tag}
+                            </p>)}
                     </div>
 
-                    <div className=' border-t border-[#13131315] mb-4'></div>
-                    <div className='mb-4'>
-                        <p className='font-medium text-xl text-[#13131380]'>{category}</p>
-                    </div>
-                    <div className=' border-t border-[#13131315] mb-6'></div>
-                    <div className='mb6'>
-                        <p className='font-medium md:font-bold text-[#131313] leading-6'>Review: <span className='tex-[#13131370] font-normal'> {review}</span></p>
-                    </div>
-                    <div>
-                        <p>Tag {tags.map(tag => <span> {tag}</span>)}</p>
-                    </div>
-
+                </div>
+                <div className='border-t border-[#13131315] mb-6'></div>
+                <div className='space-y-3 mb-8'>
+                    <p className='text-[#13131370] leading-7'>Number of Pages: <span className='font-semibold text-[#131313]'>{totalPages}</span></p>
+                    <p className='text-[#13131370] leading-7'>Publisher: <span className='font-semibold text-[#131313]'>{publisher}</span></p>
+                    <p className='text-[#13131370] leading-7'>Year of Publishing: <span className='font-semibold text-[#131313]'>{yearOfPublishing}</span></p>
+                    <p className='text-[#13131370] leading-7'>Rating: <span className='font-semibold text-[#131313]'>{rating}</span></p>
+                </div>
+                <div className='flex gap-5'>
+                    <button
+                        className='border border-[#13131330]  text-[#131313] rounded-lg font-semibold text-lg btn'>
+                        Read
+                    </button>
+                    <button
+                        className='bg-[#50B1C9] text-white rounded-lg font-semibold text-lg btn'>
+                        Wishlist
+                    </button>
                 </div>
             </div>
         </div>
