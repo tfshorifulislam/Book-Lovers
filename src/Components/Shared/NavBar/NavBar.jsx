@@ -5,15 +5,15 @@ import { FiMenu } from "react-icons/fi";
 const NavBar = () => {
     const link = <>
         <li>
-            <NavLink to={'/'} className={({isActive}) => isActive? 'font-semibold border text-[#23BE0A] ' : 'opacity-70' }
+            <NavLink to={'/'} className={({isActive}) => `${isActive? 'font-semibold border text-[#23BE0A] ' : 'text-[#131313]'} text-lg `}
             >Home</NavLink>
         </li>
         <li>
-            <NavLink to={'Books'} className={({isActive}) => isActive? 'font-semibold border text-[#23BE0A] ' : 'opacity-70'}
+            <NavLink to={'Books'} className={({isActive}) => `${isActive? 'font-semibold border text-[#23BE0A] ' : 'text-[#131313]'} text-lg `}
             >Listed Books</NavLink>
         </li>
         <li>
-            <NavLink to={'error'} className={({isActive}) => isActive? 'font-semibold border text-[#23BE0A] ' : 'opacity-70'}
+            <NavLink to={'error'} className={({isActive}) => `${isActive? 'font-semibold border text-[#23BE0A] ' : 'text-[#131313]'} text-lg `}
             >Pages to Read</NavLink>
         </li>
     </>
