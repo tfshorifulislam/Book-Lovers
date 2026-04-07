@@ -6,7 +6,7 @@ const AllBooksCard = ({ book }) => {
         <div>
             <div className="card bg-base-100 shadow-sm">
                 <figure className='bg-base-200'>
-                    <div className='p-10'>
+                    <div className='p-10 flex justify-center items-center'>
                         <img
                             className='h-60'
                             src={book.image}
