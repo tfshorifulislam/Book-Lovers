@@ -1,12 +1,12 @@
 import React from 'react';
-import bannerImg from '../../assets/hero2.png';
+import bannerImg from '../../assets/hero3.png';
 const Banner = () => {
     return (
         <div>
             <div className="w-10/12 mx-auto py-20">
                 <div className="flex flex-col space-y-5 lg:flex-row-reverse items-center justify-between">
                     <img
-                        className="lg:w-100"
+                        className="lg:w-110"
                         src={bannerImg}
                     />
                     <div>
