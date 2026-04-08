@@ -3,9 +3,39 @@ import { BookContext } from '../../API Context/APIContext';
 import { IoLocationOutline } from "react-icons/io5";
 import { GrDocumentUser } from "react-icons/gr";
 import { MdManageAccounts } from "react-icons/md";
+import { NavLink } from 'react-router';
 
 const ReadBook = () => {
     const { readBook } = useContext(BookContext);
+
+    if (readBook.length === 0) {
+        return (
+            <div className="flex justify-center items-center h-[70vh] px-4">
+                <div className="bg-white shadow-xl rounded-2xl p-8 text-center max-w-md w-full border border-gray-100">
+
+                
+                    <div className="text-6xl mb-4">📖</div>
+
+                  
+                    <h2 className="text-2xl font-bold text-[#131313] mb-2">
+                        No Books Read Yet
+                    </h2>
+
+                    
+                    <p className="text-gray-500 mb-6">
+                        You haven’t marked any books as read. Once you finish reading, they will appear here.
+                    </p>
+
+                    
+                    <NavLink to="/" className="bg-[#23BE0A] text-white px-6 py-2 rounded-lg hover:bg-green-600 transition duration-300">
+                        Start Reading
+                    </NavLink>
+
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div>
             {
@@ -60,7 +90,7 @@ const ReadBook = () => {
                                 <div className='flex justify-center  px-5 py-3 rounded-full bg-[#23BE0A]'>
                                     <p className='text-white font-medium'>View Details </p>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
