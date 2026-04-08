@@ -5,8 +5,36 @@ import { GrDocumentUser } from "react-icons/gr";
 import { MdManageAccounts } from "react-icons/md";
 
 const WishBook = () => {
-        const { wishList } = useContext(BookContext);
-    
+    const { wishList } = useContext(BookContext);
+
+    if (wishList.length === 0) {
+        return (
+            <div className="flex justify-center items-center h-[70vh] px-4">
+                <div className="bg-white shadow-xl rounded-2xl p-8 text-center max-w-md w-full border border-gray-100">
+
+                    {/* Icon */}
+                    <div className="text-6xl mb-4">📚</div>
+
+                    {/* Title */}
+                    <h2 className="text-2xl font-bold text-[#131313] mb-2">
+                        Your Wishlist is Empty
+                    </h2>
+
+                    {/* Description */}
+                    <p className="text-gray-500 mb-6">
+                        Looks like you haven’t added any books yet. Start exploring and add your favorite books here!
+                    </p>
+
+                    {/* Button */}
+                    <button className="bg-[#23BE0A] text-white px-6 py-2 rounded-lg hover:bg-green-600 transition duration-300">
+                        Browse Books
+                    </button>
+
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div>
             {
