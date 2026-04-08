@@ -10,8 +10,8 @@ const ReadBook = () => {
         <div>
             {
                 readBook.map(book => <div key={book.bookId}>
-                    <div className='flex gap-9 mt-10'>
-                        <div className='bg-[#13131315] py-14 px-20'>
+                    <div className='flex flex-col md:flex-row gap-9 mt-10 '>
+                        <div className='bg-[#13131315] py-14 px-20 flex justify-center items-center rounded-2xl'>
                             <img className='h-30' src={book.image} alt={book.bookName} />
                         </div>
                         <div>
