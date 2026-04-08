@@ -5,7 +5,7 @@ import { GrDocumentUser } from "react-icons/gr";
 import { MdManageAccounts } from "react-icons/md";
 import { NavLink } from 'react-router';
 
-const WishBook = ({sortingType}) => {
+const WishBook = ({ sortingType }) => {
     const { wishList } = useContext(BookContext);
 
     if (wishList.length === 0) {
@@ -36,7 +36,22 @@ const WishBook = ({sortingType}) => {
         );
     }
 
+    const [sortedBooks, setSortedBooks] = useState(wishList);
 
+    useEffect(() => {
+        if (sortingType) {
+            if (sortingType === 'Pages') {
+                const sortedByPages = [...wishList].sort((a, b) => a.totalPages - b.totalPages);
+                console.log(sortedByPages)
+                setSortedBooks(sortedByPages)
+            }
+            else {
+                const sortedByRating = [...wishList].sort((a, b) => a.rating - b.rating);
+                console.log(sortedByRating)
+                setSortedBooks(sortedByRating);
+            }
+        }
+    }, [sortingType, wishList]);
 
 
 
