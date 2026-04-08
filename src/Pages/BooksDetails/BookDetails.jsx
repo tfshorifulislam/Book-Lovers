@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { BookContext } from '../../API Context/APIContext';
 
 const BookDetails = () => {
     const { id } = useParams()
@@ -18,10 +19,15 @@ const BookDetails = () => {
         publisher,
         yearOfPublishing
     } = expectBook;
+
+
+
+    const { handleReadBook, handleWishList } = useContext(BookContext);
+
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
             <figure className='flex justify-center items-center p-20 bg-[#13131310] rounded-lg'>
-                <img className='lg:h-[500px]'
+                <img className='lg:h-125'
                     src={image}
                     alt={bookName} />
             </figure>
@@ -58,10 +64,12 @@ const BookDetails = () => {
                 </div>
                 <div className='flex gap-5'>
                     <button
+                        onClick={() => handleReadBook(expectBook)}
                         className='border border-[#13131330]  text-[#131313] rounded-lg font-semibold text-lg btn'>
                         Read
                     </button>
                     <button
+                        onClick={() => handleWishList(expectBook)}
                         className='bg-[#50B1C9] text-white rounded-lg font-semibold text-lg btn'>
                         Wishlist
                     </button>
