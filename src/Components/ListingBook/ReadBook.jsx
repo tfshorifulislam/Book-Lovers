@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BookContext } from '../../API Context/APIContext';
 import { IoLocationOutline } from "react-icons/io5";
 import { GrDocumentUser } from "react-icons/gr";
 import { MdManageAccounts } from "react-icons/md";
 import { NavLink } from 'react-router';
 
-const ReadBook = () => {
+const ReadBook = ({ sortingType }) => {
     const { readBook } = useContext(BookContext);
 
     if (readBook.length === 0) {
@@ -13,20 +13,20 @@ const ReadBook = () => {
             <div className="flex justify-center items-center h-[70vh] px-4">
                 <div className="bg-white shadow-xl rounded-2xl p-8 text-center max-w-md w-full border border-gray-100">
 
-                
+
                     <div className="text-6xl mb-4">📖</div>
 
-                  
+
                     <h2 className="text-2xl font-bold text-[#131313] mb-2">
                         No Books Read Yet
                     </h2>
 
-                    
+
                     <p className="text-gray-500 mb-6">
                         You haven’t marked any books as read. Once you finish reading, they will appear here.
                     </p>
 
-                    
+
                     <NavLink to="/" className="bg-[#23BE0A] text-white px-6 py-2 rounded-lg hover:bg-green-600 transition duration-300">
                         Start Reading
                     </NavLink>
@@ -36,10 +36,27 @@ const ReadBook = () => {
         );
     }
 
+    const [sortedBooks, setSortedBooks] = useState(readBook);
+
+    useEffect(() => {
+        if (sortingType) {
+            if (sortingType === 'Pages') {
+                const sortedByPages = [...readBook].sort((a, b) => a.totalPages - b.totalPages);
+                console.log(sortedByPages)
+                setSortedBooks(sortedByPages)
+            }
+            else {
+                const sortedByRating = [...readBook].sort((a, b) => a.rating - b.rating);
+                console.log(sortedByRating)
+                setSortedBooks(sortedByRating);
+            }
+        }
+    }, [sortingType, readBook]);
+
     return (
         <div>
             {
-                readBook.map(book => <div key={book.bookId}>
+                sortedBooks.map(book => <div key={book.bookId}>
                     <div className='flex flex-col md:flex-row gap-9 mt-10 '>
                         <div className='bg-[#13131315] py-14 px-20 flex justify-center items-center rounded-2xl'>
                             <img className='h-30' src={book.image} alt={book.bookName} />

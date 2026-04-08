@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BookContext } from '../../API Context/APIContext';
 import { IoLocationOutline } from "react-icons/io5";
 import { GrDocumentUser } from "react-icons/gr";
 import { MdManageAccounts } from "react-icons/md";
 import { NavLink } from 'react-router';
 
-const WishBook = () => {
+const WishBook = ({sortingType}) => {
     const { wishList } = useContext(BookContext);
 
     if (wishList.length === 0) {
@@ -36,10 +36,14 @@ const WishBook = () => {
         );
     }
 
+
+
+
+
     return (
         <div>
             {
-                wishList.map(book => <div key={book.bookId}>
+                sortedBooks.map(book => <div key={book.bookId}>
                     <div className='flex flex-col md:flex-row gap-9 mt-10 '>
                         <div className='bg-[#13131315] py-14 px-20 flex justify-center items-center rounded-2xl'>
                             <img className='h-30' src={book.image} alt={book.bookName} />
