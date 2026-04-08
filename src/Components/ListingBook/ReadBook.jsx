@@ -88,7 +88,9 @@ const ReadBook = () => {
                                 </div>
 
                                 <div className='flex justify-center  px-5 py-3 rounded-full bg-[#23BE0A]'>
-                                    <p className='text-white font-medium'>View Details </p>
+                                    <NavLink to={`/booksDetails/${book.bookId} `} className='text-white font-medium'>
+                                        View Details
+                                    </NavLink>
                                 </div>
 
                             </div>
