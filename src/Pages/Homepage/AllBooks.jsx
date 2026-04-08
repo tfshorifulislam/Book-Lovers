@@ -7,7 +7,7 @@ const AllBooks = () => {
     console.log(books)
     return (
         <div>
-            <div className='flex justify-center text-4xl font-bold text-[#131313] playfair mb-16'>
+            <div className='flex justify-center text-4xl font-bold text-[#131313] playfair mb-5 md:mb-16'>
                 <h1>Books</h1>
             </div>
 

@@ -3,10 +3,12 @@ import { IoIosStarOutline } from "react-icons/io";
 import { Link } from 'react-router';
 
 const AllBooksCard = ({ book }) => {
-    
+
     return (
         <Link to={`/booksDetails/${book.bookId} `} className="relative rounded-2xl">
-           <div className='bg-[#131313] absolute inset-0 z-50 opacity-0 hover:opacity-10 rounded-2xl'></div>
+            <div
+                className='bg-[#131313] absolute inset-0 z-50 opacity-0 hover:opacity-10 rounded-2xl'>
+            </div>
             <div className="card bg-base-100 shadow-sm ">
                 <figure className='bg-base-200'>
                     <div className='p-10 flex justify-center items-center'>
