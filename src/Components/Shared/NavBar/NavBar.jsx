@@ -43,8 +43,8 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="flex flex-wrap sm:flex-row gap-2 md:gap-4 sm:gap-3 ">
-                    <a className="btn btn-xs sm:btn-sm md:btn-md">Sign In</a>
-                    <a className="btn btn-xs sm:btn-sm md:btn-md">Sign Up</a>
+                    <a className="btn btn-xs sm:btn-sm md:btn-md bg-[#23BE0A] text-white">Sign In</a>
+                    <a className="btn btn-xs sm:btn-sm md:btn-md bg-[#59C6D2] text-white">Sign Up</a>
                 </div>
             </div>
         </div>
