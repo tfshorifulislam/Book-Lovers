@@ -13,20 +13,20 @@ const WishBook = () => {
             <div className="flex justify-center items-center h-[70vh] px-4">
                 <div className="bg-white shadow-xl rounded-2xl p-8 text-center max-w-md w-full border border-gray-100">
 
-                 
+
                     <div className="text-6xl mb-4">📚</div>
 
-                  
+
                     <h2 className="text-2xl font-bold text-[#131313] mb-2">
                         Your Wishlist is Empty
                     </h2>
 
-                 
+
                     <p className="text-gray-500 mb-6">
                         Looks like you haven’t added any books yet. Start exploring and add your favorite books here!
                     </p>
 
-                  
+
                     <NavLink to='/' className="bg-[#23BE0A] text-white px-6 py-2 rounded-lg hover:bg-green-600 transition duration-300">
                         Browse Books
                     </NavLink>
@@ -88,7 +88,10 @@ const WishBook = () => {
                                 </div>
 
                                 <div className='flex justify-center  px-5 py-3 rounded-full bg-[#23BE0A]'>
-                                    <p className='text-white font-medium'>View Details </p>
+                                    <NavLink to={`/booksDetails/${book.bookId} `}
+                                        className='text-white font-medium'>
+                                        View Details
+                                    </NavLink>
                                 </div>
 
                             </div>
